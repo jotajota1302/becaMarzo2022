@@ -1,4 +1,4 @@
-package messenger;
+package com.es.edu.eoi;
 
 public class Main {
 

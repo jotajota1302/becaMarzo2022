@@ -1,30 +1,32 @@
 package com.es.edu.eoi.service;
 
+import com.es.edu.eoi.model.Message;
+
 public class MessageServiceMailImpl implements MessageService {
 
 	@Override
-	public void sendMessage() {
+	public void sendMessage(Message message) {
 		
-		System.out.println("mensaje enviado por el servicio de mail");
-
+		System.out.println("mando el mensaje a: " + message.getTo().getName());
+		
 	}
 
 	@Override
-	public void markAsSended() {
+	public void markAsSended(Message message) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
-	public void readMessage() {
+	public void readMessage(Message message) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
-	public void markAsReaded() {
+	public void markAsReaded(Message message) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }

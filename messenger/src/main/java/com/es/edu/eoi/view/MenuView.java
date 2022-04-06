@@ -18,7 +18,12 @@ public class MenuView {
 		System.out.println("Send to:");
 		String number=scan.next();
 
+		if(number.equals("")||number.length()<7){
+			System.out.println("numero tlf no valido");						
+		}
+		
 		MenuController controller= new MenuController();		
+		
 		controller.sendMessage(text,number);
 		
 		scan.close();

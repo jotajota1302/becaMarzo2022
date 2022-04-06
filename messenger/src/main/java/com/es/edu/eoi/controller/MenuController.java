@@ -24,6 +24,8 @@ public class MenuController {
 		
 		System.out.println("*****************************");
 		
+		System.out.println("numero de mensajes enviados totales: "+Main.sendedMessages.size());
+		
 		MenuView.welcome();
 		
 	}

@@ -16,10 +16,6 @@ public class MenuController {
 	
 	public void sendMessage(String text, String number) {
 		
-		//validaciones de controller
-			
-		//logica de enviar mensaje a traves del servicio
-	
 		User to= new User("AA", String.valueOf(number), new ArrayList<Message>(),new ArrayList<Message>());
 		to.setName("Perico");
 		Message message= new Message(text,Main.user, to, Calendar.getInstance().getTime());

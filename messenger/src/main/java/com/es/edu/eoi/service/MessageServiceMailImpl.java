@@ -7,9 +7,9 @@ public class MessageServiceMailImpl implements MessageService {
 
 	@Override
 	public void sendMessage(Message message) {
-		
+				
 		System.out.println("mando el mensaje a: " + message.getTo().getName());
-		Main.sendedMessages.add(message);
+		Main.sendedMessages.add(message);		
 	}
 
 	@Override

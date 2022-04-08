@@ -4,6 +4,11 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
+import edu.es.eoi.entity.Mail;
+import edu.es.eoi.entity.User;
+import edu.es.eoi.service.MailService;
+import edu.es.eoi.service.UserService;
+
 public class Test {
 		
 	public static void main(String[] args) {

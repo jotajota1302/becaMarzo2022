@@ -1,4 +1,4 @@
-package mailservice;
+package edu.es.eoi.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MailService {
+import edu.es.eoi.entity.Mail;
+
+public class MailRepository {
 
 	public List<Mail> getInbox(int idUser) throws SQLException {
 
@@ -141,5 +143,5 @@ public class MailService {
 		return DriverManager.getConnection("jdbc:mysql://localhost:3306/beca?serverTimezone=UTC", "root", "root");
 
 	}
-
+	
 }

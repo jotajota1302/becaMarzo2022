@@ -1,16 +1,23 @@
-package mailservice;
+package edu.es.eoi;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
+import edu.es.eoi.controller.UserController;
+import edu.es.eoi.entity.Mail;
+import edu.es.eoi.entity.User;
+import edu.es.eoi.service.MailService;
+import edu.es.eoi.service.UserService;
+
 public class Application {
 
 	public static MailService mailService = new MailService();
 	public static UserService userService = new UserService();
 	public static User usuario;
-
+	public static UserController userController= new UserController();
+	
 	public static void main(String[] args) throws SQLException {
 		
 		System.out.println("Elige opcion:");
@@ -37,20 +44,7 @@ public class Application {
 			scan = new Scanner(System.in);
 			String password = scan.next();
 
-			try {
-				usuario = userService.getUser(user, password);
-
-				if (usuario != null) {
-					userService.updateLastAcess(usuario.getEmail());
-				}else{
-					main(args);
-				}
-
-			} catch (SQLException e) {
-				e.printStackTrace();
-				System.out.println("error en el login");
-				main(args);
-			}
+			userController.login(user, password);
 
 			// ahora veremos a donde vamos MENU 2
 			System.out.println("BIENVENIDO A SUPERMAIL " + usuario.getName());

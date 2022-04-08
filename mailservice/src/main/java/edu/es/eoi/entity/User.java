@@ -1,4 +1,4 @@
-package mailservice;
+package edu.es.eoi.entity;
 
 import java.sql.Timestamp;
 

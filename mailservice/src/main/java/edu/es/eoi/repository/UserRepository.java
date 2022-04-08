@@ -1,4 +1,4 @@
-package mailservice;
+package edu.es.eoi.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,8 +8,17 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
-public class UserService {
+import edu.es.eoi.entity.User;
 
+public class UserRepository {
+
+	private Connection getConnection() throws SQLException {
+
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/beca?serverTimezone=UTC", "root", "root");
+
+	}
+	
+	
 	public User getUser(String mail, String password) throws SQLException {
 
 		User user = null;
@@ -44,11 +53,7 @@ public class UserService {
 		return user;
 	}
 
-	private Connection getConnection() throws SQLException {
 
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/beca?serverTimezone=UTC", "root", "root");
-
-	}
 
 	public boolean exists(String email) throws SQLException {
 
@@ -138,4 +143,5 @@ public class UserService {
 		return false;		
 		
 	}
+	
 }

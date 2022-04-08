@@ -42,6 +42,8 @@ public class Application {
 
 				if (usuario != null) {
 					userService.updateLastAcess(usuario.getEmail());
+				}else{
+					main(args);
 				}
 
 			} catch (SQLException e) {

@@ -1,16 +1,22 @@
 package mailservice;
 
+import java.sql.Timestamp;
+
 public class Mail {
 
 	private int id;
 	
-	private String fecha;
+	private Timestamp time;
 	
 	private String subject;
 	
 	private String text;
 	
 	private boolean opened;
+	
+	private User sender;
+	
+	private User receiver;
 
 	public int getId() {
 		return id;
@@ -20,12 +26,13 @@ public class Mail {
 		this.id = id;
 	}
 
-	public String getFecha() {
-		return fecha;
+
+	public Timestamp getTime() {
+		return time;
 	}
 
-	public void setFecha(String fecha) {
-		this.fecha = fecha;
+	public void setTime(Timestamp time) {
+		this.time = time;
 	}
 
 	public String getSubject() {
@@ -50,6 +57,27 @@ public class Mail {
 
 	public void setOpened(boolean opened) {
 		this.opened = opened;
+	}
+
+	public User getSender() {
+		return sender;
+	}
+
+	public void setSender(User sender) {
+		this.sender = sender;
+	}
+
+	public User getReceiver() {
+		return receiver;
+	}
+
+	public void setReceiver(User receiver) {
+		this.receiver = receiver;
+	}
+
+	@Override
+	public String toString() {
+		return "Mail [subject=" + subject + ", text=" + text + "]";
 	}
 	
 	

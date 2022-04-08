@@ -1,6 +1,6 @@
 package mailservice;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class User {
 	
@@ -10,9 +10,11 @@ public class User {
 	
 	private String name;
 	
+	private String surname;
+	
 	private String password;
 	
-	private Date lastAccess;
+	private Timestamp lastAccess;
 	
 	
 	public int getId() {
@@ -47,15 +49,28 @@ public class User {
 		this.password = password;
 	}
 
-	public Date getLastAccess() {
+	public Timestamp getLastAccess() {
 		return lastAccess;
 	}
 
-	public void setLastAccess(Date lastAccess) {
+	public void setLastAccess(Timestamp lastAccess) {
 		this.lastAccess = lastAccess;
 	}
 
+	public String getSurname() {
+		return surname;
+	}
 
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	@Override
+	public String toString() {
+		return "User [email=" + email + ", name=" + name + "]";
+	}
+
+	
 	
 
 }

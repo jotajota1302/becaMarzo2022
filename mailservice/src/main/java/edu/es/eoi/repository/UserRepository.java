@@ -41,6 +41,7 @@ public class UserRepository {
 				user.setId(rs.getInt("id"));
 				user.setName(rs.getString("name"));
 				user.setLastAccess(rs.getTimestamp("lastaccess"));
+				user.setSurname(rs.getString("surname"));
 			}
 
 		} catch (SQLException e) {

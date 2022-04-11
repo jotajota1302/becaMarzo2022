@@ -16,6 +16,12 @@ class UserRepositoryTest {
 		User user=repository.getUser(1);
 		
 		Assertions.assertEquals("JJ", user.getName());
+		
+		User newUser=new User();
+		newUser.setName("test");
+		newUser.setSurname("surnametest");
+			
+		repository.createUser(newUser);
 	}
 
 }

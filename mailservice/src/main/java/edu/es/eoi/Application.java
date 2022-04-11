@@ -44,7 +44,7 @@ public class Application {
 			scan = new Scanner(System.in);
 			String password = scan.next();
 
-			userController.login(user, password);
+			usuario=userController.login(user, password);
 
 			// ahora veremos a donde vamos MENU 2
 			System.out.println("BIENVENIDO A SUPERMAIL " + usuario.getName());

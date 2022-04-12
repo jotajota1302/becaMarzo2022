@@ -28,10 +28,37 @@ public class UserRepository {
 	
 	//update user
 	
+
+	public void updateUser(User user) {
+		
+		entityManager.getTransaction().begin();
+		
+		entityManager.merge(user);
+		
+		entityManager.getTransaction().commit();
+	}
 	
 	
 	//delete user
+	public void deleteUser(User user) {
+		
+		entityManager.getTransaction().begin();
+		
+		entityManager.remove(user);
+		
+		entityManager.getTransaction().commit();
+	}
 	
+	public void deleteUserById(int id) {
+		
+		User user=readUser(id);
+		
+		entityManager.getTransaction().begin();
+		
+		entityManager.remove(user);
+		
+		entityManager.getTransaction().commit();
+	}
 	
 
 }

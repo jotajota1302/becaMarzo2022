@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -34,6 +35,9 @@ public class User {
 	@Column
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date lastaccess;
+	
+	@OneToOne(mappedBy = "user" )
+	private Subscription subscription;
 
 	public int getId() {
 		return id;
@@ -73,6 +77,22 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Date getLastaccess() {
+		return lastaccess;
+	}
+
+	public void setLastaccess(Date lastaccess) {
+		this.lastaccess = lastaccess;
+	}
+
+	public Subscription getSubscription() {
+		return subscription;
+	}
+
+	public void setSubscription(Subscription subscription) {
+		this.subscription = subscription;
 	}
 	
 

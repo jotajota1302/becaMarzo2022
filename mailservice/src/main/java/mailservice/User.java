@@ -16,6 +16,8 @@ public class User {
 	
 	private Timestamp lastAccess;
 	
+	private Subscription subscription;
+	
 	
 	public int getId() {
 		return id;
@@ -63,6 +65,16 @@ public class User {
 
 	public void setSurname(String surname) {
 		this.surname = surname;
+	}
+	
+	
+
+	public Subscription getSubscription() {
+		return subscription;
+	}
+
+	public void setSubscription(Subscription subscription) {
+		this.subscription = subscription;
 	}
 
 	@Override

@@ -9,7 +9,7 @@ public class Main {
 		
 		UserRepository repository= new UserRepository();
 		
-		User user=repository.getUser(1);		
+		User user=repository.readUser(1);		
 		
 		System.out.println(user.getEmail());
 

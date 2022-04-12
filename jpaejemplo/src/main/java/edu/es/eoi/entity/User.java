@@ -1,6 +1,5 @@
 package edu.es.eoi.entity;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -29,7 +28,7 @@ public class User {
 	@Column
 	private String surname;
 	
-	@Column
+	@Column	
 	private String password;
 	
 	@Column

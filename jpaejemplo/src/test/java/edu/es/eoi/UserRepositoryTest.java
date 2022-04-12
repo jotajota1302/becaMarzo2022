@@ -13,11 +13,12 @@ class UserRepositoryTest {
 	
 		UserRepository repository= new UserRepository();
 		
-		User user=repository.getUser(1);
+		User user=repository.readUser(1);
 		
 		Assertions.assertEquals("JJ", user.getName());
 		
 		User newUser=new User();
+		newUser.setId(12);
 		newUser.setName("test");
 		newUser.setSurname("surnametest");
 			

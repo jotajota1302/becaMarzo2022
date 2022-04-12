@@ -7,9 +7,11 @@ import edu.es.eoi.entity.User;
 
 public class UserRepository {
 	
+	//CRUD (Create Read Update y Delete)
+	
 	public EntityManager entityManager=Persistence.createEntityManagerFactory("BECA_PU").createEntityManager();
 	
-	public User getUser(int id) {
+	public User readUser(int id) {
 		
 		return entityManager.find(User.class,id);
 		
@@ -19,9 +21,17 @@ public class UserRepository {
 		
 		entityManager.getTransaction().begin();
 		
-		entityManager.merge(user);
+		entityManager.persist(user);
 		
 		entityManager.getTransaction().commit();
 	}
+	
+	//update user
+	
+	
+	
+	//delete user
+	
+	
 
 }

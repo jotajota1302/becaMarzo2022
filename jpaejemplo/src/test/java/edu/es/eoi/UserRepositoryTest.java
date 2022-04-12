@@ -17,12 +17,16 @@ class UserRepositoryTest {
 		
 		Assertions.assertEquals("JJ", user.getName());
 		
-		User newUser=new User();
-		newUser.setId(12);
+		User newUser=new User();		
 		newUser.setName("test");
 		newUser.setSurname("surnametest");
 			
 		repository.createUser(newUser);
+		
+		newUser.setSurname("Jimenez Rodriguez");
+		repository.updateUser(newUser);
+		
+		repository.deleteUser(newUser);
 	}
 
 }

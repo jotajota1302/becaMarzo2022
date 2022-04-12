@@ -1,13 +1,28 @@
 package edu.es.eoi;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "equipo")
 public class Equipo {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
+	@Column
 	private String nombre;
 	
+	@Column
 	private double presupuesto;
 	
+	@OneToOne(mappedBy = "equipo")
 	private Presidente presidente;
 	
 	
@@ -43,6 +58,6 @@ public class Equipo {
 		this.presidente = presidente;
 	}
 	
-	
+	 	
 
 }

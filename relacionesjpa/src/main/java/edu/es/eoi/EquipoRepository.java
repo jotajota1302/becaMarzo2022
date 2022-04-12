@@ -9,5 +9,9 @@ public class EquipoRepository {
 	
 	//CRUD
 
-	
+	public Equipo readEquipo(int id) {
+		
+		return entityManager.find(Equipo.class,id);
+				
+	}
 }

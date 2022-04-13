@@ -14,4 +14,14 @@ public class EquipoRepository {
 		return entityManager.find(Equipo.class,id);
 				
 	}
+	
+	public void createEquipo(Equipo equipo) {
+		
+		entityManager.getTransaction().begin();
+		
+		entityManager.persist(equipo);
+		
+		entityManager.getTransaction().commit();
+				
+	}
 }

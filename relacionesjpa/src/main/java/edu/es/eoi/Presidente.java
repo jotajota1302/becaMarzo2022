@@ -2,11 +2,14 @@ package edu.es.eoi;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -16,26 +19,26 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "presidente")
 public class Presidente {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	@Column
 	private String nombre;
-	
+
 	@Column
 	private String apellidos;
-	
+
 	@Column
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaInicio;
-	
+
 	@Column
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechafin;
-	
-	@OneToOne
+
+	@OneToOne()
 	@PrimaryKeyJoinColumn
 	private Equipo equipo;
 
@@ -86,8 +89,5 @@ public class Presidente {
 	public void setEquipo(Equipo equipo) {
 		this.equipo = equipo;
 	}
-	
-	
-	
-	
+
 }

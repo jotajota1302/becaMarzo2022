@@ -5,12 +5,12 @@
 <web-app>
 	<display-name>Archetype Created By JJ</display-name>
 	<servlet>
-		<servlet-name>NombreQueTeDeLaGana</servlet-name>
+		<servlet-name>loginServlet</servlet-name>
 		<servlet-class>edu.es.eoi.MiPrimerServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>NombreQueTeDeLaGana</servlet-name>
-		<url-pattern>/*</url-pattern>
+		<servlet-name>loginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
 
 </web-app>

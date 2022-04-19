@@ -12,12 +12,16 @@ public class MiPrimerServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		System.out.println("Hola pepito");
+			
 		
-		//logica de la app
+		String name=req.getParameter("name");
+	    String pw=req.getParameter("password");
 		
-		
+		if(name.equals("JJ")) {
+			resp.getWriter().append("forbidden");
+		}else {
+			resp.sendRedirect("index.jsp");
+		}
 	}
 	
 	

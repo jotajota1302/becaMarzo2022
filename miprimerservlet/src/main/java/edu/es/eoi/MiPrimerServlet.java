@@ -13,6 +13,8 @@ public class MiPrimerServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 			
+		UserRepository repository=new UserRepository();
+		repository.saveUser();
 		
 		String name=req.getParameter("name");
 	    String pw=req.getParameter("password");

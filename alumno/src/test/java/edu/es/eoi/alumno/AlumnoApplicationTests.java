@@ -13,7 +13,7 @@ class AlumnoApplicationTests {
 	@Test
 	void contextLoads() {
 		
-		controller.getNombreAlumnoById(1);
+		System.out.println(controller.getNombreAlumnoById(1));
 	}
 
 }

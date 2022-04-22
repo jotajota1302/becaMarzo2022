@@ -1,11 +1,13 @@
-package edu.es.eoi.shop;
+package edu.es.eoi.shop.entities;
+
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,22 +15,30 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class CartItem {
-	
+public class Product {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
 	@Column
-	private int quantity;
+	private String category;
+	
+	@Column
+	private String description;
+	
+	@Column
+	private String manufacturer;
+	
+	@Column
+	private String name;
 	
 	@Column
 	private double price;
 	
-	@ManyToOne(targetEntity = Product.class)
-	private Product product;
+	@Column
+	private int unitStock;
 	
-	@ManyToOne(targetEntity = Cart.class)
-	private Cart cart;
-
+	@OneToMany(targetEntity = CartItem.class)
+	private List<CartItem> cartItems;
 }

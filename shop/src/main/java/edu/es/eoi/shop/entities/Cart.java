@@ -1,4 +1,4 @@
-package edu.es.eoi.shop;
+package edu.es.eoi.shop.entities;
 
 import java.util.List;
 
@@ -16,31 +16,21 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class ShippingAddress {
+public class Cart {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
 	@Column
-	private String address;
-	
-	@Column
-	private String city;
-	
-	@Column
-	private String state;
-	
-	@Column
-	private String zipcode;
-	
-	@Column
-	private String country;
+	private double totalPrice;
 
 	@OneToOne(targetEntity = Customer.class)
 	private Customer customer;
 	
-	@OneToMany(targetEntity = SalesOrder.class)
+	@OneToMany(targetEntity = CartItem.class)	
+	private List<CartItem> cartItems;
+	
+	@OneToMany(targetEntity = Cart.class)
 	private List<SalesOrder> orders;
-
 }

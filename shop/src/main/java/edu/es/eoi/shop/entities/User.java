@@ -1,4 +1,4 @@
-package edu.es.eoi.shop;
+package edu.es.eoi.shop.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

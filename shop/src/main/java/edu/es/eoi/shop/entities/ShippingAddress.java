@@ -1,4 +1,4 @@
-package edu.es.eoi.shop;
+package edu.es.eoi.shop.entities;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class BillingAddress {
+public class ShippingAddress {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -42,5 +42,5 @@ public class BillingAddress {
 	
 	@OneToMany(targetEntity = SalesOrder.class)
 	private List<SalesOrder> orders;
-	
+
 }

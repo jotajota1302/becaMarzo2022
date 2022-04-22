@@ -12,5 +12,5 @@ public interface SalesOrderRepository extends JpaRepository<SalesOrder, Integer>
 
 	public List<SalesOrder> findByOrderByCartTotalPriceDesc();
 	
-	
+	public List<SalesOrder> findByShippingAddressCity(String city);
 }

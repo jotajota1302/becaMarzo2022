@@ -35,7 +35,9 @@ class ShopApplicationTests {
 		
 //		customerRepository.save(customer);
 		
+		System.out.println(userRepository.findByEnabled(true).get(0).getEmail());
 		
+		System.out.println(userRepository.findByOrderByEmailDesc());
 	}
 
 }

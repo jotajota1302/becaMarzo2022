@@ -7,10 +7,12 @@ import javax.persistence.OneToOne;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
+@ToString(exclude = "customer")
 public class User {
 
 	@Id	

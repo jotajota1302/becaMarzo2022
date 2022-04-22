@@ -7,6 +7,29 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	
 	<persistence-unit name="BECA_PU">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>model.CantidadTipoPokemon</class>
+		<class>model.EfectoSecundario</class>
+		<class>model.EstadisticasBase</class>
+		<class>model.FormaAprendizaje</class>
+		<class>model.FormaEvolucion</class>
+		<class>model.Mo</class>
+		<class>model.Movimiento</class>
+		<class>model.MovimientoEfectoSecundario</class>
+		<class>model.MovimientoEfectoSecundarioPK</class>
+		<class>model.Mt</class>
+		<class>model.NivelAprendizaje</class>
+		<class>model.NivelEvolucion</class>
+		<class>model.Piedra</class>
+		<class>model.Pokemon</class>
+		<class>model.PokemonEvolucionPiedra</class>
+		<class>model.PokemonMovimientoForma</class>
+		<class>model.PokemonMovimientoFormaPK</class>
+		<class>model.PokemonNoEvolucionan</class>
+		<class>model.Tipo</class>
+		<class>model.TipoAtaque</class>
+		<class>model.TipoEvolucion</class>
+		<class>model.TipoFormaAprendizaje</class>
+		<class>model.TipoPiedra</class>
 		<properties>
 			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/beca?serverTimezone=UTC" />
 			<property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />

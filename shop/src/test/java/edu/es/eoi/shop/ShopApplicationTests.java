@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import edu.es.eoi.shop.entities.Customer;
 import edu.es.eoi.shop.entities.User;
 import edu.es.eoi.shop.repositories.CustomerRepository;
+import edu.es.eoi.shop.repositories.SalesOrderRepository;
 import edu.es.eoi.shop.repositories.UserRepository;
 
 @SpringBootTest
@@ -17,6 +18,9 @@ class ShopApplicationTests {
 	
 	@Autowired
 	CustomerRepository customerRepository;
+	
+	@Autowired
+	SalesOrderRepository salesOrderRepository;
 	
 	@Test
 	void contextLoads() {
@@ -38,6 +42,8 @@ class ShopApplicationTests {
 		System.out.println(userRepository.findByEnabled(true).get(0).getEmail());
 		
 		System.out.println(userRepository.findByOrderByEmailDesc());
+		
+		System.out.println(salesOrderRepository.findByOrderByCartTotalPriceDesc());
 	}
 
 }

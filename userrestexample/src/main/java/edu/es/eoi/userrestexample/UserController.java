@@ -3,17 +3,13 @@ package edu.es.eoi.userrestexample;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
 
@@ -21,29 +17,27 @@ public class UserController {
 	private UserService service;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody List<User> findAll() {
+	public List<User> findAll() {
 
 		return service.findAll();
 
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public @ResponseBody User findById(@PathVariable Integer id) {
+	public User findById(@PathVariable Integer id) {
 
 		return service.findById(id);
 
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	@ResponseBody
 	public String create(@RequestBody User user) {
 
 		service.create(user);
 		return "user created";
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	@ResponseBody
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)	
 	public String update(@RequestBody User user, @PathVariable Integer id) {
 
 		if (user.getId() != id) {
@@ -55,18 +49,12 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	@ResponseBody
 	public String deleteById(@PathVariable Integer id) {
 
 		service.delete(id);
 		return "user deleted";
 	}
 
-	@ExceptionHandler(Exception.class)
-	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-	@ResponseBody
-	public String handleServerErrors(Exception ex) {
-		return ex.getMessage();
-	}
+
 
 }

@@ -17,4 +17,6 @@ public interface UserRepository extends JpaRepository<User, String>{
 	public List<User> findByOrderByEmailAsc();	
 	
 	public List<User> findByOrderByEmailDesc();
+
+	
 }

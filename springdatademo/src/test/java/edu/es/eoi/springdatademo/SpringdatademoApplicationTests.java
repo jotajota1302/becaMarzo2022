@@ -24,7 +24,7 @@ class SpringdatademoApplicationTests {
 	@Test
 	void contextLoads() {
 		
-//		System.out.println(clienteRepository.findAll());		
+		System.out.println(clienteRepository.findAll());		
 //		System.out.println(bancoRepository.findAll());
 //		System.out.println(cuentaRepository.findAll());
 //				

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/home")
 public class MyController {
-
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody String getHome(@RequestParam String nombre,@RequestParam String apellidos) {
 		return "hello world from get, you are: " + nombre+", " + apellidos;

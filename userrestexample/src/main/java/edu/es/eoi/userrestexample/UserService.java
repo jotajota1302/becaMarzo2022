@@ -18,7 +18,28 @@ public class UserService {
 	
 	public User findById(int id) {
 		
-		return repository.findById(id).get();
+		User user=repository.findById(id).get();
+		user.setPassword("***********");
+		
+		return user;
+	}
+	
+	public void create(User user) {
+		
+		repository.save(user);		
+		
+	}
+	
+	public void update(User user) {
+		
+		repository.save(user);		
+		
+	}
+	
+	public void delete(int id) {
+		
+		repository.deleteById(id);	
+		
 	}
 	
 }

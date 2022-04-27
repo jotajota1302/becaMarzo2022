@@ -19,22 +19,16 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
-	
+public class Subscription {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@Column
-	private String email;
-	
-	@Column
-	private String name;
-	
-	@Column
-	private String password;
-	
-	@OneToOne(targetEntity = Subscription.class)
-	private Subscription subscription;
+	private String tipo;
 
+	@OneToOne(targetEntity = User.class)
+	private User user;
+	
 }

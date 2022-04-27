@@ -16,11 +16,17 @@ public class UserService {
 		return repository.findAll();
 	}
 	
-	public User findById(int id) {
+	public UserDto findById(int id) {
 		
 		User user=repository.findById(id).get();
 			
-		return user;
+		UserDto dto=new UserDto();
+		dto.setId(user.getId());
+		dto.setMail(user.getEmail());
+		dto.setSubscription(user.getSubscription().getTipo());
+				
+		
+		return dto;
 	}
 	
 	public void create(User user) {

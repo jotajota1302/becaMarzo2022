@@ -1,4 +1,4 @@
-package edu.es.eoi.h2example;
+package edu.es.eoi.bank.dto;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package edu.es.eoi.h2example;
+package edu.es.eoi.bank.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

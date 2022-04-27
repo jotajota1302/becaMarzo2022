@@ -1,9 +1,13 @@
-package edu.es.eoi.h2example;
+package edu.es.eoi.bank.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import edu.es.eoi.bank.dto.UserDto;
+import edu.es.eoi.bank.entity.User;
+import edu.es.eoi.bank.repository.UserRepository;
 
 @Service
 public class UserService {

@@ -1,4 +1,4 @@
-package edu.es.eoi.h2example;
+package edu.es.eoi.bank.controller;
 
 import java.util.List;
 
@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import edu.es.eoi.bank.dto.UserDto;
+import edu.es.eoi.bank.entity.User;
+import edu.es.eoi.bank.service.UserService;
 
 @RestController
 public class UserController {
